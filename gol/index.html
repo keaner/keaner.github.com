@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conway's Game Of Life</title>
+<style type="text/css">
+	body {
+		margin: 10px;
+		padding: 0;
+		background-color: #333;
+		font-family: helvetica, arial;
+		color: #ccc;
+		overflow: hidden;
+	}
+
+	#instructions {
+		-webkit-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+		opacity: 0.8;
+		top: 50%;
+		margin-top: -40px;
+		padding: 20px;
+		position: absolute;
+		z-index: 1000;
+		width: 100%;
+		left: 0;
+		text-align: center;
+		color: #999;
+		font-size: 40px;
+		text-shadow: 1px 1px 0 #fff;
+		font-variant: small-caps;
+		font-weight: bold;
+		background-color: black;
+		vertical-align: center;
+		letter-spacing: 5px;
+	}
+
+	footer {
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		background-color: red;
+		z-index: 100;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+		padding: 10px 15px;
+		opacity: .8;
+		overflow: hidden;
+		height: 15px;
+		width: 10px;
+	}
+
+	footer:hover {
+		height: 100px;
+		width: 150px;
+		line-height: 1.5em;
+		font-size: 12px;
+	}
+
+	footer:hover #question, #stats {
+		display: none;
+	}
+
+	footer:hover #stats, #question {
+		display: block;
+	}
+
+	#question, #alive {
+		font-weight: bold;
+	}
+
+	footer .important {
+		font-size: 14px;
+	}
+
+	canvas {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+
+</style>
+</head>
+<body>
+	<div id="instructions">Click to Start Simulation</div>
+	<div id="field"></div>
+	<footer>
+		<div id="question">?</div>
+		<div id="stats">
+			<div class="important"><span id="alive"></span> Living Cells</div>
+			<div>Click to Start or Stop</div>
+			<div>Created by Robert Keane</div>
+		</div>
+	</footer>
+	<canvas id="c1" width="200" height="200"></canvas>
+	<canvas id="c2" width="200" height="200"></canvas>
+	<script src="life.js"></script>
+</body>
+</html>
